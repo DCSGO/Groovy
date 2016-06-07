@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Lista de Musica</string>
+
+    <string name="action_settings">Settings</string>
+    <string-array name="spinner_option">
+        <item>Tudo</item>
+        <item>Artista</item>
+        <item>Ano de Lançamento</item>
+        <item>Avaliação</item>
+        <item>Editora</item>
+    </string-array>
+</resources>
