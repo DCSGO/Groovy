@@ -39,14 +39,14 @@ public class MainActivity extends AppCompatActivity {
 
     albums = new ArrayList<String>();
 
-    //albums.add("Linkin Park - Meteora - 2003");
-    //albums.add("Crown The Empire - Rise of the Runaways - 2014");
-    //albums.add("Hands Like Houses - Dissonants - 2016");
-    //albums.add("Asking Alexandria - From Death to Destiny - 2013");
-    //albums.add("This Wild Life - Clouded - 2014");
-    //albums.add("Metallica - Death Magnetic - 2008");
-    //albums.add("Pablo Alboran - Tour Terral - 2015");
-    //albums.add("Black Veil Brides - Set The World On Fire - 2011");
+    albums.add("Linkin Park - Meteora - 2003");
+    albums.add("Crown The Empire - Rise of the Runaways - 2014");
+    albums.add("Hands Like Houses - Dissonants - 2016");
+    albums.add("Asking Alexandria - From Death to Destiny - 2013");
+    albums.add("This Wild Life - Clouded - 2014");
+    albums.add("Metallica - Death Magnetic - 2008");
+    albums.add("Pablo Alboran - Tour Terral - 2015");
+    albums.add("Black Veil Brides - Set The World On Fire - 2011");
 
     //Spinner
     ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
             simpleAdapterData.add(hashMap);
         }
 
-        String[] from = {"name", "phone"};
+        String[] from = {"Tudo", "Artista", "Ano de Lançamento", "Avaliação", "Editora"};
         int[] to = {R.id.textView_artista, R.id.textView_ano};
         SimpleAdapter simpleAdapter = new SimpleAdapter(getBaseContext(), simpleAdapterData, R.layout.listview_item, from, to);
         return simpleAdapter;
@@ -215,30 +215,46 @@ public class MainActivity extends AppCompatActivity {
                         resultados.add(c);
                     }
                 }
-            }  else if (itemSeleccionado.equals("Ano de Lançamento")) {
+            }  else if (itemSeleccionado.equals("Album")) {
 
 
                 for (int i = 0; i < albums.size(); i++) {
                     String c = albums.get(i);
 
                     String[] s = c.split("\\-");
-                    String number = s[1];
+                    String alb = s[1];
 
-                    boolean contem = number.contains(termo);
+                    boolean contem = alb.contains(termo);
 
                     if (contem) {
                         resultados.add(c);
                     }
                 }
 
-            } else if (itemSeleccionado.equals("Editora")) {
+            }  else if (itemSeleccionado.equals("Ano de Lançamento")) {
+
+
+                    for (int i = 0; i < albums.size(); i++) {
+                        String c = albums.get(i);
+
+                        String[] s = c.split("\\-");
+                        String ano = s[2];
+
+                        boolean contem = ano.contains(termo);
+
+                        if (contem) {
+                            resultados.add(c);
+                        }
+                    }
+
+            }  else if (itemSeleccionado.equals("Editora")) {
 
 
                 for (int i = 0; i < albums.size(); i++) {
                     String c = albums.get(i);
 
                     String[] s = c.split("\\|");
-                    String ano = s[2];
+                    String ano = s[3];
 
                     boolean contem = ano.contains(termo);
 
@@ -253,7 +269,7 @@ public class MainActivity extends AppCompatActivity {
                     String c = albums.get(i);
 
                     String[] s = c.split("\\|");
-                    String aval = s[3];
+                    String aval = s[4];
 
                     boolean contem = aval.contains(termo);
 

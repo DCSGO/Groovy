@@ -5,6 +5,7 @@
     <string-array name="spinner_option">
         <item>Tudo</item>
         <item>Artista</item>
+        <item>Album</item>
         <item>Ano de Lançamento</item>
         <item>Avaliação</item>
         <item>Editora</item>
